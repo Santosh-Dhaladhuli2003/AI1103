@@ -15,6 +15,7 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 import seaborn as sn
 import xlrd
+import pylab
 
 
 
@@ -83,7 +84,6 @@ pmf = [f,p,g,g,i,j,v,r]
 
 X = [0,1,2,3,4,5,6,7]
 
- import pylab
 
 # set the x axis and y axis limits
 
