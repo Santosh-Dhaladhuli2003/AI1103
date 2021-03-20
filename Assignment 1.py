@@ -78,31 +78,116 @@ print("P(0 < X < 3) = P(X=2) + P(X=1) = {0}".format(i))
 
 #plotting the probability
 
+pmf = [f,p,g,g,i,j,v,r]
 
 
+X = [0,1,2,3,4,5,6,7]
 
+ 
 
+# set the x axis and y axis limits
 
+pylab.xlim([0,8])
 
+pylab.ylim([0,1])
 
-objects = ('0','1','2','3','4','5','6','7')
-y_pos = np.arange(len(objects))
-performance = [f,p,g,g,i,j,v,r]
+ 
 
-plt.bar(y_pos, performance, align='center', alpha=1)
-plt.xticks(y_pos, objects)
+# Provide a title for the stem plot
+
+plt.title('PMF')
+
+ 
+
+# Give x axis label for the stem plot
+
 plt.xlabel('X')
+
+ 
+
+# Give y axis label for the stem plot
+
 plt.ylabel('Pr(X)')
 
+ 
+
+# plot the stem plot using matplotlib
+
+markerline, stemlines, baseline = plt.stem(X, pmf, '-')
+
+ 
+
+# display the stem plot
+
 plt.show()
 
-obj = ('0','1','2','3','4','5','6','7')
-y_pos = np.arange(len(obj))
-performances = [f,p,h,t,u,z,w,1]
 
-plt.bar(y_pos, performances, align='center', alpha=1)
-plt.xticks(y_pos, objects)
+
+cdf = [f,p,h,t,u,z,w,1]
+
+
+X = [0,1,2,3,4,5,6,7]
+
+ 
+
+# set the x axis and y axis limits
+
+pylab.xlim([0,8])
+
+pylab.ylim([0,1.2])
+
+ 
+
+# Provide a title for the stem plot
+
+plt.title('CDF')
+
+ 
+
+# Give x axis label for the stem plot
+
 plt.xlabel('X')
+
+ 
+
+# Give y axis label for the stem plot
+
 plt.ylabel('F(X)')
 
+ 
+
+# plot the stem plot using matplotlib
+
+markerline, stemlines, baseline = plt.stem(X, cdf, '-')
+
+ 
+
+# display the stem plot
+
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
