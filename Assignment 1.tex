@@ -215,25 +215,31 @@ F(X) & 0 & 1/10 & 3/10 & 5/10 & 8/10 & 81/100 & 83/100 & 1 \\ \hline
 	\includegraphics[width=\columnwidth]{CDF.png}
     \caption{Cummulative Distribution Function(CDF)}
 \end{figure}
- 
-\item \pr{X < 3} = \pr{X = 0}+\pr{X = 1}+\pr{X = 2}
+\\
+ We know that \pr{X \le x} = F(x) \\
+ and  \pr{x< X \le y} = F(y) - F(x) \\
+\item \pr{X < 3} = \pr{X \le 3} - \pr{X = 3} 
  \begin{align}
-\tag{5.12.5}
-\implies  \pr{X < 3} = 0 + k + 2k = 3k \\
+ \tag{5.12.5}
+ \implies \pr{X < 3} =F(3)- \pr{X = 3} \\
+\tag{5.12.6}
+\implies  \pr{X < 3} = \frac{5}{10} - \frac{2}{10}   \\
 \tag{2}
 \therefore  \pr{X < 3} = \frac{3}{10} 
    \end{align} 
- \item \pr{X > 6} = \pr{X = 7} = 7$k^2$ + k 
+ \item \pr{X > 6} = 1 - \pr{X \le 6} = 1 - F(6)
  \begin{align}
-\tag{5.12.6}
-\implies  \pr{X > 6}  = \frac{7}{100} + \frac{1}{10} \\
+\tag{5.12.7}
+\implies  \pr{X > 6}  = 1 - \frac{83}{100} \\
 \tag{3}
 \therefore \pr{X > 6} = \frac{17}{100} 
 \end{align}
-\item \pr{0 < X < 3} = \pr{X = 1} + \pr{X = 2}  
+\item \pr{0 < X < 3} = \pr{0 < X \le 3} - \pr{X = 3}  
 \begin{align}
- \tag{5.12.7}
-              \implies   \pr{0 < X < 3} = k + 2k = 3k\\
+\tag{5.12.8}
+\implies \pr{0 < X < 3} = F(3) - F(0) - \pr{X = 3} \\
+ \tag{5.12.9}
+\implies   \pr{0 < X < 3} = \frac{5}{10} - 0 - \frac{2}{10} \\
 \tag{4}              
     \therefore    \pr{0 < X < 3} = \frac{3}{10}
 \end{align}
