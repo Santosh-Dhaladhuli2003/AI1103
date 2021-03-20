@@ -161,7 +161,6 @@ Determine:
 \end{enumerate}
 \section*{Solution}
 
-PMF of X:
 \begin{align}
  \tag{5.12.1}
  \pr{X} = 
@@ -185,8 +184,9 @@ PMF of X:
 \begin{align}
 \tag{5.12.3}
 \implies 10k^2 + 9k - 1 = 0 
- \implies  (10k - 1)(k + 1) = 0 
+ \implies  (10k - 1)(k + 1) = 0
  \end{align}
+ 
   \begin{equation}
   \tag{5.12.4}
  \implies  k = -1, \frac{1}{10} 
@@ -198,24 +198,23 @@ PMF of X:
  
  \begin{figure}[!htb]
     \centering    
-	\includegraphics[width=\columnwidth]{probability.png}
+	\includegraphics[width=\columnwidth]{pmf.png}
     \caption{Probability Mass Function(PMF)}
 \end{figure}
- 
- CDF of X:
- \begin{table}[h]
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline
-X    & 0 & 1    & 2    & 3    & 4    & 5      & 6      & 7 \\ \hline
-F(X) & 0 & 1/10 & 3/10 & 5/10 & 8/10 & 81/100 & 83/100 & 1 \\ \hline
-\end{tabular}
-\end{table}
+
 \begin{figure}[!htb]
     \centering    
-	\includegraphics[width=\columnwidth]{CDF.png}
-    \caption{Cummulative Distribution Function(CDF)}
+	\includegraphics[width=\columnwidth]{cdf.png}
+    \caption{Cumulative Distribution Function(CDF)}
 \end{figure}
-\\
+ \begin{table}[]
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+X    & 0 & 1   & 2   & 3   & 4   & 5    & 6    & 7 \\ \hline
+F(X) & 0 & 0.1 & 0.3 & 0.5 & 0.8 & 0.81 & 0.83 & 1 \\ \hline
+\end{tabular}
+\caption{CDF of X}
+\end{table}
  We know that \pr{X \le x} = F(x) \\
  and  \pr{x< X \le y} = F(y) - F(x) \\
 \item \pr{X < 3} = \pr{X \le 3} - \pr{X = 3} 
