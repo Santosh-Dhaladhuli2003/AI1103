@@ -23,4 +23,15 @@ e = d/b
 print("So they will be 52 saturdays for sure")
 print("Remaining days = 366 - 364 = 2 ")
 print("So the probability of occurence of a  53rd Saturday is {0}".format(e))
+cases = [0]
+theoretical_results = [2/7]
+simulated_results = [e]
+x = np.arange(len(cases))
+plt.bar(x + 0.00, theoretical_results, color = 'blue', width = 0.30, label = 'Theoretical results')
+plt.bar(x + 0.30, simulated_results, color = 'green', width = 0.30, label = 'Simulated results')
+plt.ylabel('Probability of 53 Saturdays in leap year')
+plt.xlabel('Theoretical vs Simulated')
+
+plt.legend()
+plt.show()
 
