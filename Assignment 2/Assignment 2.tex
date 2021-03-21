@@ -1,15 +1,14 @@
-\documentclass[addpoints,twocolumn]{exam}
-\usepackage[utf8]{inputenc}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 
 \usepackage{setspace}
+\usepackage{paralist}
 \usepackage{gensymb}
 \singlespacing
 \usepackage[cmex10]{amsmath}
-\usepackage{amssymb}
-\usepackage{xurl}
 
 \usepackage{amsthm}
-\usepackage{comment}
+\usepackage{amssymb}
+
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -50,6 +49,12 @@
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -60,15 +65,6 @@ breaklines=true,
 columns=fullflexible
 }
 \begin{document}
-
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{problem}{Problem}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
 
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
@@ -119,13 +115,14 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{AI1103 : Assignment 2}
-\author{Santosh Dhaladhuli - MS20BTECH11007}
+\title{\textbf{AI1103 : Assignment 2}}
+\author{\textbf{Santosh Dhaladhuli MS20BTECH11007}}
 \maketitle
 \newpage
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+
 Download all python codes from 
 \begin{lstlisting}
 https://github.com/Santosh-Dhaladhuli2003/AI1103/blob/main/Assignment%202/assignment_2.py
@@ -136,28 +133,27 @@ and latex codes from
 \begin{lstlisting}
 https://github.com/Santosh-Dhaladhuli2003/AI1103/blob/main/Assignment%202/Assignment%202.tex
 \end{lstlisting}
-\section{GATE EE 2013 Question No. 61}
-\begin{questions}
-\question What is the chance that a leap year,selected at random,will contain 53 Saturdays? \\
-\begin{oneparchoices}
-$
- \choice \frac{2}{7} 
- \choice \frac{3}{7}
- \choice \frac{1}{7}
- \choice \frac{5}{7}
- $
-\end{oneparchoices}
-\end{questions}
-\section{Solution}
+\section{\textbf{GATE EE 2013 Question No. 61}}
+
+What is the chance that a leap year,selected at random,will contain 53 Saturdays? \\
+\begin{inparaenum}[\Large (A)]
+    \item \Large $\frac{2}{7}$ \hspace{0.125cm}
+    \item \Large $\frac{3}{7}$ \hspace{0.125cm}
+    \item \Large $\frac{1}{7}$ \hspace{0.125cm}
+    \item \Large $\frac{5}{7}$ \hspace{0.125cm}
+  \end{inparaenum}
+
+\section{\textbf{Solution}}
 There are 52 complete weeks in an year \\
 $\implies 52 \times 7 = 364 $ \\
 So, the 364 days will definitely have 52 Saturdays. \\
 remaining days = 366 - 364 \\
 The 53\textsuperscript{rd} Saturday can occur at the remaining 2 days. \\
-$\therefore$ The Probability of 53 Saturdays in a leap year = $\frac{2}{7}$ \\
+$\therefore$ Probability of 53 Saturdays in a leap year = $\frac{2}{7}$ \\
 The correct answer is \textbf{Option A}
+
 \begin{figure}[htb]
 \centering
-\includegraphics[width=9.75cm]{Assignment 2.png}
+\includegraphics[width=9cm]{Assignment 2.png}
 \end{figure}
 \end{document}
