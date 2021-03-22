@@ -43,6 +43,9 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \DeclareMathOperator*{\Res}{Res}
 
@@ -144,11 +147,16 @@ What is the chance that a leap year,selected at random,will contain 53 Saturdays
   \end{inparaenum}
 
 \section{\textbf{Solution}}
-There are 52 complete weeks in an year \\
-$\implies 52 \times 7 = 364 $ \\
-So, the 364 days will definitely have 52 Saturdays. \\
-remaining days = 366 - 364 \\
-The 53\textsuperscript{rd} Saturday can occur at the remaining 2 days. \\
-$\therefore$ Probability of 53 Saturdays in a leap year = $\frac{2}{7}$ \\
-The correct answer is \textbf{Option A}
+Let X be a random variable that denotes the number of Saturdays in a leap year. \\
+$\implies$ No of days in a leap year = 366 Days
+No of complete weeks in a leap year = $\floor{\frac{366}{7}}$ = 52 \\
+$\therefore$ We Define, X $\in$ {[52,53]} \\
+$\pr{X = 52} \longrightarrow$ denotes for 52 Saturdays \\
+$\pr{X = 53} \longrightarrow$ denotes for 53 Saturdays \\
+ $\implies$ Remaining Days = 366 - (52 \times 7) = 2 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{AI1103 3.png}
+\end{figure}
 \end{document}
