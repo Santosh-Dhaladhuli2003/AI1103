@@ -118,7 +118,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{\textbf{AI1103 : Assignment 2}}
+\title{\textbf{AI1103 : Assignment 3}}
 \author{\textbf{Santosh Dhaladhuli MS20BTECH11007}}
 \maketitle
 \newpage
@@ -155,7 +155,8 @@ Since,$A_{1},A_{2},.....A_{n}$ are independent.Complements of $A_{1},A_{2},.....
 $\implies$ 
 \begin{equation}
 \tag{2.1}
-\pr{A_{1}^\complement \cap A_{2}^\complement \cap....A_{n}^\complement} = \pr{A_{1}^\complement} \times \pr{A_{2}^\complement} ...\times\pr{A_{n}^\complement}
+\pr{A_{1}^\complement \cap A_{2}^\complement \cap....A_{n}^\complement}
+=\prod_{i=1}^{n} \pr{A_{i}^\complement}
 \end{equation}
 \begin{equation}
     \tag{2.2}
@@ -166,7 +167,7 @@ $\implies$
 \text{Let,} x = \sum_{i=1}^{n}i
 \implies x = \frac{n(n+1)}{2}
 \end{equation}
-from equations (1.1), (1.2) and (2.2)
+from equations (1.1), (1.2), (2.1) and (2.2)
 \begin{equation}
 \tag{2.4}
 \implies \pr{S} = 1 - \frac{1}{\alpha^x} = 1 - \frac{1}{\alpha^\frac{n(n+1)}{2}}
