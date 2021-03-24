@@ -142,21 +142,22 @@ Let $A_{1},A_{2},.....A_{n}$ be n independent events in which the Probability of
   \end{inparaenum}
 
 \section{\textbf{Solution}}
-Let $A_{1} \cup A_{2} \cup A_{3} .... \cup A_{n}$ = S, \\
+Let $A_{1} + A_{2} + A_{3} .... + A_{n}$ = S, \\
 $\pr{S}$ = Probability of atleast one event occuring
-De morgan's law states that $(A \cup B)^\complement = A^\complement \cap B^\complement$  
+De morgan's law states that $(A + B)^\prime = A^\prime B^\prime$  
 \begin{align}
     \tag{1.1}
-   \implies \pr{S} = 1 - \pr{S^\complement} \\ 
+   \implies \pr{S} = 1 - \pr{S^\prime} \\ 
    \tag{1.2}
-   1 - \pr{S^\complement}= 1 - \pr{A_{1}^\complement \cap A_{2}^\complement \cap A_{3}^\complement \cap....A_{n}^\complement}
+   1 - \pr{S^\prime}= 1 - \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
+   ....A_{n}^\prime}
 \end{align}
 Since,$A_{1},A_{2},.....A_{n}$ are independent.Complements of $A_{1},A_{2},.....A_{n}$ are also independent. \\
 $\implies$ 
 \begin{equation}
 \tag{2.1}
-\pr{A_{1}^\complement \cap A_{2}^\complement \cap....A_{n}^\complement}
-=\prod_{i=1}^{n} \pr{A_{i}^\complement}
+\pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
+   ....A_{n}^\prime}=\prod_{i=1}^{n}\pr{A_{i}^\prime}
 \end{equation}
 \begin{equation}
     \tag{2.2}
