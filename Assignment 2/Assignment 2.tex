@@ -139,24 +139,32 @@ https://github.com/Santosh-Dhaladhuli2003/AI1103/blob/main/Assignment%202/Assign
 \section{\textbf{GATE EE 2013 Question No. 61}}
 
 What is the chance that a leap year,selected at random,will contain 53 Saturdays? \\
-\begin{inparaenum}[\Large (A)]
-    \item \Large $\frac{2}{7}$ \hspace{0.125cm}
-    \item \Large $\frac{3}{7}$ \hspace{0.125cm}
-    \item \Large $\frac{1}{7}$ \hspace{0.125cm}
-    \item \Large $\frac{5}{7}$ \hspace{0.125cm}
-  \end{inparaenum}
+\begin{enumerate}
+    \item  $\frac{2}{7}$ 
+    \item  $\frac{3}{7}$ 
+    \item  $\frac{1}{7}$ 
+    \item  $\frac{5}{7}$ 
+\end{enumerate}
+    
+  
 
 \section{\textbf{Solution}}
 Let X be a random variable \\
  We Define, X $\in$ {{0,1}} \\
-$\pr{X = 0} \longrightarrow$ denotes for 52 Saturdays \\
-$\pr{X = 1} \longrightarrow$ denotes for 53 Saturdays \\
+ \begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline
+P(X = 0) & denotes for 52 Saturday  \\ \hline
+P(X = 1) & denotes for 53 Saturdays \\ \hline
+\end{tabular}
+\end{table}
  $\implies$ Remaining Days = 366 - (52 \times 7) = 2 \\
  \implies\pr{X = 1} = \frac{2}{7} \\
  $\therefore$ The correct answer is \textbf{Option A}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=0.5\textwidth]{Assignment 2 AI1103.png}
+\includegraphics[width=0.45\textwidth]{Assignment 2 AI1103.png}
+\caption{Simulation for \pr{X = 1}}
 \end{figure}
 \end{document}
