@@ -163,15 +163,23 @@ $\implies$
     \tag{2.2}
 \pr{A_{i}} = 1 - \frac{1}{\alpha^i} \implies \pr{A_{i}^\prime} = \frac{1}{\alpha^i}
 \end{equation}
+substituting (2.2) in (2.1),
 \begin{equation}
     \tag{2.3}
-\text{Let,} x = \sum_{i=1}^{n}i
-\implies x = \frac{n(n+1)}{2}
+  \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} =  \prod_{i=1}^{n}\frac{1}{\alpha^i} \\
+\end{equation}
+\begin{equation}
+\tag{2.4}
+   \prod_{i=1}^{n}\frac{1}{\alpha^i}=\frac{1}{\alpha^{\sum_{i}^{n}i}}= \frac{1}{\alpha^\frac{n(n+1)}{2}} 
+\end{equation}
+\begin{equation}
+\tag{2.5}
+    \therefore \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} = \pr{S^\prime} = \frac{1}{\alpha^\frac{n(n+1)}{2}}
 \end{equation}
 from equations (1.1), (1.2), (2.1) and (2.2)
 \begin{equation}
-\tag{2.4}
-\implies \pr{S} = 1 - \frac{1}{\alpha^x} = 1 - \frac{1}{\alpha^\frac{n(n+1)}{2}}
+\tag{2.6}
+\implies \pr{S} = 1 - \pr{S^\prime} = 1 - \frac{1}{\alpha^\frac{n(n+1)}{2}}
 \end{equation}
 $\therefore$ The correct option is \textbf{(a)}
 \end{document}
