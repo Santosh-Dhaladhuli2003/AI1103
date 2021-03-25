@@ -151,6 +151,7 @@ De morgan's law states that $(A + B)^\prime = A^\prime B^\prime$
    \tag{1.2}
    1 - \pr{S^\prime}= 1 - \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
    ....A_{n}^\prime}
+   \label{1}
 \end{align}
 $\forall$ i $\in$ {1,2,....n} \\
 Since, $A_{i}$ are independent.\\
@@ -160,12 +161,13 @@ $\implies$
 \tag{2.1}
 \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
    ....A_{n}^\prime}=\prod_{i=1}^{n}\pr{A_{i}^\prime}
+   \label{2}
 \end{equation}
 \begin{equation}
     \tag{2.2}
-\pr{A_{i}} = 1 - \frac{1}{\alpha^i} \implies \pr{A_{i}^\prime} = \frac{1}{\alpha^i}
+\pr{A_{i}} = 1 - \frac{1}{\alpha^i} \implies \pr{A_{i}^\prime} = \frac{1}{\alpha^i} \label{5}
 \end{equation}
-substituting (2.2) in (2.1),
+substituting \eqref{5} in \eqref{2},
 \begin{equation}
     \tag{2.3}
   \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} =  \prod_{i=1}^{n}\frac{1}{\alpha^i} \\
@@ -176,9 +178,9 @@ substituting (2.2) in (2.1),
 \end{equation}
 \begin{equation}
 \tag{2.5}
-    \therefore \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} = \pr{S^\prime} = \frac{1}{\alpha^\frac{n(n+1)}{2}}
+    \therefore \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} = \pr{S^\prime} = \frac{1}{\alpha^\frac{n(n+1)}{2}} \label{3}
 \end{equation}
-from equations (1.2) and (2.5) 
+from equations \eqref{1} and \eqref{3} 
 \begin{equation}
 \tag{2.6}
 \implies \pr{S} = 1 - \pr{S^\prime} = 1 - \frac{1}{\alpha^\frac{n(n+1)}{2}}
