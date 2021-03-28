@@ -128,7 +128,7 @@ columns=fullflexible
 
 Download all python codes from 
 \begin{lstlisting}
-https://github.com/Santosh-Dhaladhuli2003/AI1103/blob/main/Assignment%205/assignment_5.py
+https://github.com/Santosh-Dhaladhuli2003/AI1103/blob/main/Assignment%205/Assignment%205.py
 \end{lstlisting}
 %
 and latex codes from 
@@ -151,15 +151,30 @@ Let X be a Random variable defined,that denotes the duration of a telephonic con
 So, X $\in$ [0,$\infty$) \\
 Using the probability in exponential distribution,
 \begin{align}
-    \pr{X > 5} =  \lim_{x\to\infty} \int_{5}^{x} \frac{1}{5}e^{-\frac{x}{5}} \,dx \\
-   \implies  \lim_{x\to\infty} \brak{-e^{- \frac{x}{5}}} \Bigg|_5^x \\
-   \implies \lim_{x\to\infty} \brak{-e^{- \frac{x}{5}} + \frac{1}{e}} \\
-   \therefore \pr{X > 5} = \frac{1}{e}
+\label{CDF}
+\text{CDF of X is F(y)}  = \pr{X \le y} \\
+\label{Int}
+\implies F(y) = 1 -  \int_{y}^{\infty} \frac{1}{5}e^{-\frac{x}{5}} \,dx \\
+\label{P}
+\text{Required Probability is } \pr{X > 5} = 1 - \pr{X \le 5} 
 \end{align}
-
+From \eqref{CDF}, \eqref{Int} and \eqref{P}
+\begin{align}
+\implies \pr{X > 5} = 1 - \brak{1 -  \int_{5}^{\infty} \frac{1}{5}e^{-\frac{x}{5}} \,dx}\\
+\implies \pr{X > 5} = \int_{5}^{\infty}\frac{1}{5}e^{-\frac{x}{5}} \\
+\implies \pr{X > 5} = \brak{-e^{- \frac{x}{5}}} \Bigg|_5^\infty \\
+\implies \pr{X > 5} = -e^{-\infty} + e^{-1} \\
+\therefore \pr{X > 5} = 0 + e^{-1} = \frac{1}{e} 
+\end{align}
+$\therefore$ The correct answer is \textbf{Option 1}
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width = 0.5\textwidth]{Exp Assignment 5.png}
+    \includegraphics[width = 0.45\textwidth]{Exp Assignment 5.png}
     \label{EXP}
+\end{figure}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.45\textwidth]{CDF assignment 5.png}
+    \label{cdf}
 \end{figure}
 \end{document}
