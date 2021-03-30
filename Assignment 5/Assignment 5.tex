@@ -149,23 +149,25 @@ Assume that the duration in minutes of a telephone conversation follows the expo
 \section{\textbf{Solution}}
 Let X be a Random variable defined,that denotes the duration of a telephonic conversation in minutes.\\
 So, X $\in$ [0,$\infty$) \\
-Using the probability in exponential distribution,
-\begin{align}
+Given, f$_X$(x) = $\frac{1}{5}e^{-\frac{x}{5}}$ \\
+Let CDF of X be F$_X$(x)
+\begin{align*}
+F_X(x) &=  \int_{-\infty}^{x}f_X(t) \,dt \\
+       &= \int_{-\infty}^{0}f_X(t) \,dt + \int_{0}^{x}f_X(t) \,dt \\
+F_X(x) &= \int_{0}^{x}f_X(t) \,dt  \because f_X(x) = 0 \forall x<0  \\
+\therefore F_X(x) &= \int_{0}^{x}\frac{1}{5}e^{-\frac{t}{5}} \,dt \\
+\tag{1}
 \label{CDF}
-\text{CDF of X is F(y)}  = \pr{X \le y} \\
-\label{Int}
-\implies F(y) = 1 -  \int_{y}^{\infty} \frac{1}{5}e^{-\frac{x}{5}} \,dx \\
-\label{P}
-\text{Required Probability is } \pr{X > 5} = 1 - \pr{X \le 5} 
-\end{align}
-From \eqref{CDF}, \eqref{Int} and \eqref{P}
-\begin{align}
-\implies \pr{X > 5} = 1 - \brak{1 -  \int_{5}^{\infty} \frac{1}{5}e^{-\frac{x}{5}} \,dx}\\
-\implies \pr{X > 5} = \int_{5}^{\infty}\frac{1}{5}e^{-\frac{x}{5}} \\
-\implies \pr{X > 5} = \brak{-e^{- \frac{x}{5}}} \Bigg|_5^\infty \\
-\implies \pr{X > 5} = -e^{-\infty} + e^{-1} \\
-\therefore \pr{X > 5} = 0 + e^{-1} = \frac{1}{e} 
-\end{align}
+\implies F_X(x) &= 1 - e^{-\frac{x}{5}}
+\end{align*}
+\begin{align*}
+\text{We Know } F_X(x) &= \pr{X \le x} \\
+\text{Required Probability is }\pr{X > 5} &= 1 - \pr{X \le 5} \\
+\implies \pr{X > 5} &= 1 - F_X(5) \\
+ &= 1 - (1 - e^{-\frac{5}{5}}) \\
+ &= e^{-\frac{5}{5}}  \\
+ &= e^{-1} = \frac{1}{e}
+\end{align*}
 $\therefore$ The correct answer is \textbf{Option 1}
 \begin{figure}[!htb]
     \centering
