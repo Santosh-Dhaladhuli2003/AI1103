@@ -144,10 +144,10 @@ Suppose X is a Random Variable such that E(X) = 0, E($X^2$) = 2 and E($X^4$)=4.T
 Let X be a Random variable. \\
 Compute Variance of $X^2$ 
 \begin{align*}
-    Var(X^2) &= E(X^4) - (E(X^2))^{2} \\
+    \sigma^(X^2) &= E(X^4) - (E(X^2))^{2} \\
              &=  4 - 2^2 \\
              &= 0\\
-\tag{1} \label{Var(X^2)}   \implies Var(X^2) &= 0
+\tag{1} \label{Var(X^2)}   \implies \sigma^2(X^2) &= 0
 \end{align*}
 $\therefore$ X is a random variable such that $X^2$ is constant.\\
 Given E($X^2$) = 2,
@@ -185,7 +185,7 @@ Also, Sum of Probabilities is 1,
 \end{align*} 
 
 \centering \boxed{\text{\textbf{Option 1} is a \textbf{correct} answer}}
-\vspace{1cm} \\
+\vspace{0.8cm} \\
 \textbf{Option 2} says $\pr{X \ge 0}$ = $\frac{1}{2}$,
 \begin{align*}
     \pr{X\ge 0} &= \pr{X = \sqrt{2}} = \frac{1}{2} \\
@@ -193,25 +193,28 @@ Also, Sum of Probabilities is 1,
 \end{align*}
 
 \centering \boxed{\text{\textbf{Option 2} is a \textbf{correct} answer}}
-\vspace{1cm} \\
+\vspace{0.8cm} \\
 \textbf{Option 3} says X $\sim$ N(0,2),\\
 Let $\mu$ be the mean of X
 \begin{align*}
             \mu &= E(X) \\
     \tag{6} \label{mu}
    \implies \mu &= 0 \\
-      \sigma^2 = Var(X) &= E(X^2) - (E(X))^{2} \\
+      \sigma^2 &= E(X^2) - (E(X))^{2} \\
                 &= 2 - (0)^{2} \\
                 \tag{7} \label{Var(X)}
-\implies Var(X) &= 2
-\implies N(\mu,\sigma^2) = N(0,2) \\
-\implies X &\sim N(0,2)
+\implies \sigma^2(X) &= 2
 \end{align*}
-\centering \boxed{\text{\textbf{Option 3} is a \textbf{correct} answer}}
+But Random Variable X is defined for $\pm\sqrt{2}$ only.\\
+This means that distribution of X is not continuous,but discrete.
+\vspace{0.05cm}\\
+\centering \boxed{\text{\textbf{Option 3} is a \textbf{WRONG} answer}}
 \pagebreak  \\
 \centering
 \textbf{Option 4} says X is bounded with probability 1, \\
 Equations \eqref{X > 0} and \eqref{X < 0} show that X $\in ({-\sqrt{2},\sqrt{2}})$ with Probability 1. 
 \vspace{0.5cm} \\
 \centering \boxed{\text{\textbf{Option 4} is a \textbf{correct} answer}}
+\vspace{0.5cm}\\
+\boxed{\text{So, only Options \textbf{ 1,2 and 4} are correct}}
 \end{document}
