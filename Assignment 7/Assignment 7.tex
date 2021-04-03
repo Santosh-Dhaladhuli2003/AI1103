@@ -142,12 +142,20 @@ Suppose X is a Random Variable such that E(X) = 0, E($X^2$) = 2 and E($X^4$)=4.T
 
 \section{\textbf{Solution}}
 Let X be a Random variable. \\
-Compute Variance of $X^2$ 
+Compute Variance of $X^2$, Let Y = $X^2$
 \begin{align*}
-    \sigma^(X^2) &= E(X^4) - (E(X^2))^{2} \\
+    \sigma^(Y) &= E(Y^2) - (E(Y))^{2} \\
              &=  4 - 2^2 \\
              &= 0\\
-\tag{1} \label{Var(X^2)}   \implies \sigma^2(X^2) &= 0
+\tag{1}   \implies \sigma^2(X^2) &= 0 \\
+\sigma^2(Y) &= E((Y - E(Y))^2) = 0
+\end{align*}
+We Know Z = $(Y - E(Y))^2$ $\ge$ 0 \\
+If E(Z) = 0 then it means Z = 0 
+\begin{align*}
+  \implies Y &= E(Y) \\
+  \tag{*}
+  X^2 &= E(X^2) = 2
 \end{align*}
 $\therefore$ X is a random variable such that $X^2$ is constant.\\
 Given E($X^2$) = 2,
@@ -166,7 +174,7 @@ Given E(X) = 0,
       \tag{3} \label{P(X)}
 \implies \pr{X = \sqrt{2}} = \pr{X = -\sqrt{2}}
 \end{align*}
-\centering
+
 Also, Sum of Probabilities is 1,
 \begin{align*}
     \implies \pr{X = \sqrt{2}} + \pr{X =-\sqrt{2}} &= 1 \\
@@ -175,7 +183,7 @@ Also, Sum of Probabilities is 1,
     \tag{5} \label{X < 0}
     \implies                    \pr{X = -\sqrt{2}} &= \frac{1}{2}
 \end{align*}
-\centering
+
 \textbf{Option 1} says E($X^3$) = 0,
 \begin{align*}
     E(X^3) &= \Sigma X^3 \pr{X} \\
@@ -183,18 +191,20 @@ Also, Sum of Probabilities is 1,
            &= X^2 E(X)\\
 \implies E(X^3) &= 0      
 \end{align*} 
-
-\centering \boxed{\text{\textbf{Option 1} is a \textbf{correct} answer}}
+\begin{center}
+     \boxed{\text{\textbf{Option 1} is a \textbf{correct} answer}}
+\end{center}
 \vspace{0.8cm} \\
 \textbf{Option 2} says $\pr{X \ge 0}$ = $\frac{1}{2}$,
 \begin{align*}
     \pr{X\ge 0} &= \pr{X = \sqrt{2}} = \frac{1}{2} \\
     \implies \pr{X \ge 0} &= \frac{1}{2}
 \end{align*}
-
-\centering \boxed{\text{\textbf{Option 2} is a \textbf{correct} answer}}
-\vspace{0.8cm} \\
-\textbf{Option 3} says X $\sim$ N(0,2),\\
+\begin{center}
+    \boxed{\text{\textbf{Option 2} is a \textbf{correct} answer}}
+\end{center}
+\vspace{0.1cm} \\
+\textbf{Option 3} says X $\sim$ N(0,2),
 Let $\mu$ be the mean of X
 \begin{align*}
             \mu &= E(X) \\
@@ -202,15 +212,16 @@ Let $\mu$ be the mean of X
    \implies \mu &= 0 \\
       \sigma^2 &= E(X^2) - (E(X))^{2} \\
                 &= 2 - (0)^{2} \\
-                \tag{7} \label{Var(X)}
+                \tag{7} 
 \implies \sigma^2(X) &= 2
 \end{align*}
 But Random Variable X is defined for $\pm\sqrt{2}$ only.\\
 This means that distribution of X is not continuous,but discrete.
-\vspace{0.05cm}\\
-\centering \boxed{\text{\textbf{Option 3} is a \textbf{WRONG} answer}}
-\pagebreak  \\
-\centering
+\vspace{0.3cm}
+\begin{center}
+    \boxed{\text{\textbf{Option 3} is a \textbf{WRONG} answer}}
+\end{center}
+\vspace{0.3cm}
 \textbf{Option 4} says X is bounded with probability 1, \\
 Equations \eqref{X > 0} and \eqref{X < 0} show that X $\in ({-\sqrt{2},\sqrt{2}})$ with Probability 1. 
 \vspace{0.5cm} \\
