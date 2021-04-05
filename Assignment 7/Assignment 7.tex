@@ -144,7 +144,7 @@ Suppose X is a Random Variable such that E(X) = 0, E($X^2$) = 2 and E($X^4$)=4.T
 Let X be a Random variable. \\
 Compute Variance of $X^2$, Let Y = $X^2$
 \begin{align*}
-    \sigma^(Y) &= E(Y^2) - (E(Y))^{2} \\
+    \sigma(Y) &= E(Y^2) - (E(Y))^{2} \\
              &=  4 - 2^2 \\
              &= 0\\
 \tag{1}   \implies \sigma^2(X^2) &= 0 \\
@@ -183,8 +183,8 @@ Also, Sum of Probabilities is 1,
     \tag{5} \label{X < 0}
     \implies                    \pr{X = -\sqrt{2}} &= \frac{1}{2}
 \end{align*}
-
-\textbf{Option 1} says E($X^3$) = 0,
+\begin{enumerate}
+\item \textbf{Option 1}: E($X^3$) = 0,
 \begin{align*}
     E(X^3) &= \Sigma X^3 \pr{X} \\
            &= X^2 .\Sigma X \pr{X} \\
@@ -194,8 +194,8 @@ Also, Sum of Probabilities is 1,
 \begin{center}
      \boxed{\text{\textbf{Option 1} is a \textbf{correct} answer}}
 \end{center}
-\vspace{0.8cm} \\
-\textbf{Option 2} says $\pr{X \ge 0}$ = $\frac{1}{2}$,
+\vspace{0.8cm}
+\item \textbf{Option 2}: $\pr{X \ge 0}$ = $\frac{1}{2}$,
 \begin{align*}
     \pr{X\ge 0} &= \pr{X = \sqrt{2}} = \frac{1}{2} \\
     \implies \pr{X \ge 0} &= \frac{1}{2}
@@ -204,14 +204,14 @@ Also, Sum of Probabilities is 1,
     \boxed{\text{\textbf{Option 2} is a \textbf{correct} answer}}
 \end{center}
 \vspace{0.1cm}
-\textbf{Option 3} says X $\sim$ N(0,2),
+\item \textbf{Option 3}: X $\sim$ N(0,2) \\
 Let $\mu$ be the mean of X
 \begin{align*}
             \mu &= E(X) \\
     \tag{6} \label{mu}
    \implies \mu &= 0 \\
-      \sigma^2 &= E(X^2) - (E(X))^{2} \\
-                &= 2 - (0)^{2} \\
+      \sigma^2(X) &= E(X^2) - (E(X))^{2} \\
+                &= 2 - 0^{2} \\
                 \tag{7} 
 \implies \sigma^2(X) &= 2
 \end{align*}
@@ -222,10 +222,11 @@ This means that distribution of X is not continuous,but discrete.
     \boxed{\text{\textbf{Option 3} is a \textbf{WRONG} answer}}
 \end{center}
 \vspace{0.3cm}
-\textbf{Option 4} says X is bounded with probability 1, \\
-Equations \eqref{X > 0} and \eqref{X < 0} show that X $\in ({-\sqrt{2},\sqrt{2}})$ with Probability 1. 
+\item \textbf{Option 4}: X is bounded with probability 1, \\
+Eq. \eqref{X > 0} and \eqref{X < 0} show that X $\in ({-\sqrt{2},\sqrt{2}})$ with Probability 1. 
 \vspace{0.5cm} \\
 \centering \boxed{\text{\textbf{Option 4} is a \textbf{correct} answer}}
-\vspace{0.5cm}\\
-\boxed{\text{So, only Options \textbf{ 1,2 and 4} are correct}}
+\end{enumerate}
+\vspace{0.5cm}
+\centering \boxed{\text{So, only Options \textbf{1, 2 and 4} are correct}}
 \end{document}
