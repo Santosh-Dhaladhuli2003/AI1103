@@ -148,12 +148,15 @@ Compute Variance of $X^2$, Let Y = $X^2$
              &=  4 - 2^2 \\
              &= 0\\
 \tag{1}   \implies \sigma^2(X^2) &= 0 \\
-\sigma^2(Y) &= E((Y - E(Y))^2) = 0
+\sigma^2(Y) &= E((Y - E(Y))^2) = 0 \\
+            &= \Sigma(Y - E(Y))^{2}\pr{X} \\
+            (Y - E(Y))^{2} &\ge 0 \text{ and} \pr{X} \ge 0 
 \end{align*}
-We Know Z = $(Y - E(Y))^2$ $\ge$ 0 \\
-If E(Z) = 0 then it means Z = 0 
+Since each term inside summation are non-negative \\
+For summation to be 0,term in it must be 0, 
 \begin{align*}
-  \implies Y &= E(Y) \\
+\implies (Y - E(Y))^{2} &= 0
+  \implies Y = E(Y) \\
   \tag{*}
   X^2 &= E(X^2) = 2
 \end{align*}
