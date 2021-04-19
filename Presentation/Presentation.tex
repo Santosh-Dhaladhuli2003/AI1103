@@ -1,0 +1,233 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{url}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tkz-fct}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{tkz-euclide} 
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\title{Statistical Inequalities in Probability Theory}
+\author{Santosh Dhaladhuli - MS20BTECH11007}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Question}
+\begin{frame}
+\frametitle{Markov's Inequality}
+\begin{block}{Statement:}
+If X is a non-negative random variable and a $>$ 0, then the probability that X is at least a is at most the expectation of X divided by a. \\
+Mathematically,
+\begin{equation}
+    \pr{X \ge a} \le \frac{E[X]}{a}
+\end{equation}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Importance}
+\begin{enumerate}
+    \item It is useful in providing bounds for the\textbf{ Cumulative Distribution Function(CDF)} of a random variable. \\
+    \item It provides machinery to define the \textbf{Chebyshev's Inequality },which is an important underpinning in much of Probability theory and Asymptotic theory.
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}{Mathematical Proof of Markov's Inequality}
+\begin{block}{Proof:}
+Using the definition of E[X],let f(x) be the probability function,
+\begin{align}
+    E[X] &= \int_{-\infty}^{\infty} xf(x) \,dx \\
+    &= \int_{0}^{\infty} xf(x) \,dx \because \text{X is non-negative} \\
+    &= \int_{0}^{a} xf(x) \,dx + \int_{a}^{\infty} xf(x) \,dx \ge \int_{a}^{\infty} xf(x) \,dx \\
+    \int_{a}^{\infty} xf(x) \,dx &\ge \int_{a}^{\infty} af(x) \,dx \\ 
+    \int_{a}^{\infty} af(x) \,dx &= a\pr{X\ge a}
+\end{align}
+\end{block}
+\end{frame}
+\begin{frame}{Proof contd...}
+   \begin{block}{Proof:} 
+   \begin{align}
+     E[X] &\ge \int_{a}^{\infty} af(x) \,dx = a\pr{X\ge a}\\
+     E[X] &\ge a\pr{X\ge a} \\
+     \label{markov}
+     \pr{X\ge a} &\le \frac{E[X]}{a} , a > 0
+    \end{align}
+   \centering Hence, Markov's Inequality is proved.
+\end{block}
+\end{frame}
+\begin{frame}{Chebyshev's Inequality}
+\begin{block}{Statement:}
+      Let X be a random variable with finite expected value $E[X]$ and finite non-zero variance $\sigma^2$. Then for any real number k $>$ 0,
+      \begin{equation}
+      \label{chebyshev}
+          \pr{\lvert X - E[X] \rvert \ge k\sigma} \le \frac{1}{k^{2}}, \forall k>0
+      \end{equation}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Importance:}
+\begin{enumerate}
+    \item \textbf{The Weak Law of Large Numbers(WLLN)}, one of the single most important theorems in probability theory, follows directly from application of Chebyshev's Inequality. 
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}{Mathematical Proof of Chebyshev's Inequality}
+\begin{block}{Proof:}
+  We can directly apply Markovs inequality: 
+  \begin{align}
+    \pr{\lvert X - E[X] \rvert \ge k\sigma} &=  \pr{\lvert X - E[X] \rvert^2 \ge k^2\sigma^2} \\
+ \pr{\lvert X - E[X] \rvert^2 \ge k^2\sigma^2} &\le \frac{E[\lvert X - E[X] \rvert^2]}{k^2\sigma^2} \\
+                                            &\le \frac{\sigma^2}{k^2 \sigma^2} \\
+                                            &\le \frac{1}{k^2} \\
+  \therefore  \pr{\lvert X - E[X] \rvert \ge k\sigma} &\le \frac{1}{k^2}                                        
+  \end{align}
+ \centering Hence, Chebyshev's Inequality has been proved
+\end{block}
+\end{frame}
+\begin{frame}{Jensen's Inequality}
+\begin{block}{Pre - requisites:}
+In general, a twice differentiable function $\phi(X)$ is a  convex function iff:
+\begin{equation*}
+    \frac{d^2 \phi}{dX^2} \ge 0
+\end{equation*}
+$\phi(X)$ will be a concave function when, 
+\begin{equation*}
+    \frac{d^2 \phi}{dX^2} \le 0
+\end{equation*}
+\end{block}
+\begin{block}{Statement:}
+In the context of probability theory, it is generally stated in the following form: if X is a random variable and $\phi$ is a convex function, then
+\begin{equation*}
+    \phi(E(X)) \le E(\phi(X)) 
+\end{equation*} 
+Inequality gets reversed when $\phi$ is a strictly concave function
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Importance}
+\begin{enumerate}
+    \item There are situations where, for \textbf{mathematical convenience},we may want to switch the order of Expected value and function. Jensen's Inequality provides a machinery to confidently make this switch,under appropriate conditions. \\
+    \item The Inequality pops up quite a bit in \textbf{Machine Learning} contexts. Most modern methods for \textbf{Deep Generative Learning} rely on Jensen's Inequality as an essential underpinning.
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}{Mathematical Proof of Jensen's Inequality}
+\begin{block}{Proof:}
+Let $E[X] = \mu$, and let $L_\mu(X) = a + bX$ be the tangent line to the strictly convex function $\phi$ at $\mu$. \\
+We have that $\phi(\mu) = L_\mu(\mu)$, and we know by convexity $\phi(X) \ge L_\mu(X)  \forall X$. Thus we have:
+\begin{align}
+    \phi(X) &\ge L_\mu(X) \\
+    \implies E[\phi(X)] &\ge E[L_\mu(X)] \\
+    \implies E[\phi(X)] &\ge a + bE[X] = a + b\mu = L_\mu(\mu) = \phi(\mu) = \phi(E[X]) \\
+    \therefore \phi(E[X]) &\le E[\phi(X)]
+\end{align}
+\centering Hence, Jensen's Inequality is proved.
+\end{block}
+\end{frame}
+\begin{frame}{Example Question 1}
+\begin{block}{\textbf{GATE ST 2021 Q.1 st. section}}
+Let X be a non-constant positive Random Variable such that $E(X) = 9$.\\
+Then which of the following statements is True?
+\begin{enumerate}
+\item   $E(\frac{1}{X+1}) > 0.1$ and $\pr{X \ge 10} \le 0.9$
+\item   $E(\frac{1}{X+1}) < 0.1$ and $\pr{X \ge 10} \le 0.9$
+\item   $E(\frac{1}{X+1}) > 0.1$ and $\pr{X \ge 10} > 0.9$
+\item   $E(\frac{1}{X+1}) < 0.1$ and $\pr{X \ge 10} > 0.9$
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}{Solution}
+\begin{block}{}
+Given, for X $>$ 0 ,$E(X) = 9$, $E(\frac{1}{X+1})$ can be estimated by Jensens's Inequality.
+\begin{align}
+    \text{So for } \phi(X) &= \frac{1}{X+1}, \\
+                \frac{d\phi}{dX} &= - \frac{1}{(X+1)^{2}} \\
+                \frac{d^2 \phi}{dX^2} &= \frac{2}{(X+1)^{3}} 
+    \implies \frac{d^2 \phi}{dX^2} \ge 0,(\because X>0 )
+\end{align}
+\centering So, $\phi(X) = \frac{1}{X+1}$ is a convex function.
+\end{block}
+\end{frame}
+\begin{frame}{Solution Contd...}
+\begin{block}{}
+Using Jensen's Inequality,
+\begin{align}
+    E[(X+1)^{-1}] &\ge \frac{1}{E[X]+1} \\
+    \implies E[(X+1)^{-1}] &\ge \frac{1}{9 + 1} \\\
+    \label{Part 1}
+    \implies E[(X+1)^{-1}] &\ge 0.1
+\end{align}
+\end{block}
+\end{frame}
+\begin{frame}{Solution contd...}
+\begin{block}{}
+$\pr{X \ge 10}$ can be estimated by Markov's Inequality. \\
+for a = 10,using \eqref{markov}
+\begin{align}
+    \pr{X \ge 10} &\le \frac{E(X)}{10} \\
+    \implies \pr{X \ge 10} &\le \frac{9}{10} \\
+    \label{Part 2}
+   \therefore \pr{X \ge 10} &\le 0.9
+\end{align}
+So by equations \eqref{Part 1} and \eqref{Part 2},
+\begin{center}
+     \boxed{\textbf{Option 1 is the Correct Answer}}
+\end{center}
+\end{block}
+\end{frame}
+\begin{frame}{Example Question 2}
+\begin{block}{\textbf{gov/stats/2015/statistics-I(1), Q.1(d)}}
+Let X be a Random Variable with $E[X] = 3$, $E[X^2] = 13$. Use Chebyshev's Inequality to obtain $\pr{-2 < X < 8}$
+\end{block}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{}
+    Computing the Variance($\sigma ^{2}$),
+\begin{align}
+    \sigma^{2} &= E[X^2] - E[X]^2 \\
+    \implies \sigma^{2} &= 13 - 9 = 4 \\
+    \label{sigma}
+    \sigma &= 2
+    \end{align}
+    using \eqref{sigma},
+\begin{align}\
+\label{final}
+    \pr{-2 < X < 8} &= 1 - \pr{\lvert X - 3 \rvert > 5} \\
+     \label{main}
+    \pr{\lvert X - 3 \rvert > 5} &= \pr{\lvert X - E[X] \rvert > k\sigma} \\
+    k\sigma &= 5 \\
+    \implies 2k &= 5 \\
+     \label{k}
+    \therefore k &= \frac{5}{2}
+\end{align}
+    \end{block}
+\end{frame}
+\begin{frame}{Solution contd...}
+    \begin{block}{}
+    Using \eqref{chebyshev} , \eqref{main} and \eqref{k} in \eqref{final},
+    \begin{align}
+    \pr{-2 < X < 8} &\ge 1 - (0.4)^{2} \\
+     \label{result}
+\implies \pr{-2 < X < 8} &\ge \frac{21}{25}
+\end{align}
+    \end{block}
+\end{frame}
+\end{document}
